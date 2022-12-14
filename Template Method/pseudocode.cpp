@@ -1,6 +1,5 @@
 #include<iostream>
 
-// abstract
 class BaseClass { 
 protected:
 	virtual void someMethod() = 0;
