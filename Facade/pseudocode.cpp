@@ -1,13 +1,8 @@
 class VideoFile
-
 class OggCompressionCodec
-
 class MPEG4CompressionCodec
-
 class CodecFactory
-
 class BitrateReader
-
 class AudioMixer
 
 class VideoConverter is
