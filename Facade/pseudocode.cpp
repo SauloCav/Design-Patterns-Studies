@@ -1,29 +1,15 @@
-// These are some of the classes of a complex 3rd-party video
-// conversion framework. We don't control that code, therefore
-// can't simplify it.
-
 class VideoFile
-// ...
 
 class OggCompressionCodec
-// ...
 
 class MPEG4CompressionCodec
-// ...
 
 class CodecFactory
-// ...
 
 class BitrateReader
-// ...
 
 class AudioMixer
-// ...
 
-
-// We create a facade class to hide the framework's complexity
-// behind a simple interface. It's a trade-off between
-// functionality and simplicity.
 class VideoConverter is
     method convert(filename, format):File is
         file = new VideoFile(filename)
@@ -37,9 +23,6 @@ class VideoConverter is
         result = (new AudioMixer()).fix(result)
         return new File(result)
 
-// Application classes don't depend on a billion classes
-// provided by the complex framework. Also, if you decide to
-// switch frameworks, you only need to rewrite the facade class.
 class Application is
     method main() is
         convertor = new VideoConverter()
