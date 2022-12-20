@@ -1,11 +1,5 @@
-// A Java program to demonstrate implementation
-// of iterator pattern with the example of
-// notifications
-
-// A simple Notification class
 class Notification
 {
-	// To store notification message
 	String notification;
 
 	public Notification(String notification)
@@ -18,13 +12,11 @@ class Notification
 	}
 }
 
-// Collection interface
 interface Collection
 {
 	public Iterator createIterator();
 }
 
-// Collection of notifications
 class NotificationCollection implements Collection
 {
 	static final int MAX_ITEMS = 6;
@@ -35,7 +27,6 @@ class NotificationCollection implements Collection
 	{
 		notificationList = new Notification[MAX_ITEMS];
 
-		// Let us add some dummy notifications
 		addItem("Notification 1");
 		addItem("Notification 2");
 		addItem("Notification 3");
@@ -59,27 +50,18 @@ class NotificationCollection implements Collection
 	}
 }
 
-// We could also use Java.Util.Iterator
 interface Iterator
 {
-	// indicates whether there are more elements to
-	// iterate over
 	boolean hasNext();
-
-	// returns the next element
 	Object next();
 }
 
-// Notification iterator
 class NotificationIterator implements Iterator
 {
 	Notification[] notificationList;
 
-	// maintains curr pos of iterator over the array
 	int pos = 0;
-
-	// Constructor takes the array of notificationList are
-	// going to iterate over.
+	
 	public NotificationIterator (Notification[] notificationList)
 	{
 		this.notificationList = notificationList;
@@ -87,7 +69,6 @@ class NotificationIterator implements Iterator
 
 	public Object next()
 	{
-		// return next element in the array and increment pos
 		Notification notification = notificationList[pos];
 		pos += 1;
 		return notification;
@@ -103,8 +84,6 @@ class NotificationIterator implements Iterator
 	}
 }
 
-// Contains collection of notifications as an object of
-// NotificationCollection
 class NotificationBar
 {
 	NotificationCollection notifications;
@@ -126,7 +105,6 @@ class NotificationBar
 	}
 }
 
-// Driver class
 class Main
 {
 	public static void main(String args[])
